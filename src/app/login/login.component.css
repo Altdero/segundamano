@@ -1,0 +1,33 @@
+.sm-logo {
+  width: 100%;
+}
+.login-container {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .sm-logo {
+    width: 60%;
+  }
+  .login-container {
+    width: 60vw;
+  }
+}
+@media (min-width: 992px) {
+  .btn-block {
+    width: 35% !important;
+  }
+  .login-container {
+    width: 45vw;
+  }
+}
+@media (min-width: 1200px) {
+  .login-container {
+    width: 35vw;
+  }
+}
+@media (min-width: 1600px) {
+  .login-container {
+    width: 30vw;
+  }
+}

@@ -1,27 +1,28 @@
-# Segundamano
+# Segundamano: Technical test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+Frameworks utilizados:
 
-## Development server
+- Angular versión 8.2.2
+- Bootstrap versión 4.3.1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Librerías utilizadas:
 
-## Code scaffolding
+- animate.css versión 3.7.2
+- sweetalert2 versión 8.17.6
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Iconos:
 
-## Build
+- Material Icons © Google
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Requerimientos
 
-## Running unit tests
+- Conexión a internet
+- NPM (preferentemente versión 6.11.3)
+- Angular CLI (preferentemente versión 8.2.2)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Pasos para probar el desarrollo
 
-## Running end-to-end tests
+Dentro de la carpeta "segundamano" ejecutar los siguientes comandos:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. `npm install`
+2. `ng serve -o`

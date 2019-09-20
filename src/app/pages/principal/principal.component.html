@@ -1,0 +1,39 @@
+<div class="w-100 h-100-vh m-0 p-3 p-sm-5 d-flex justify-content-center align-items-center animated fadeIn bg-dark">
+  <div class="main-container m-0 p-0 mh-100">
+    <div class="row pb-5">
+      <div class="col-12 text-center">
+        <a href="https://api.chucknorris.io/" target="_blank">
+          <img (mouseover)="animarChuck('#chuck', 'tada')" id="chuck" class="chuck-logo" src="../../../assets/chucknorris_logo_coloured_small@2x.png" />
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 col-sm-9 col-xl-10 pr-0">
+        <select [(ngModel)]="categoriaSel" class="custom-select" id="categoria">
+          <option value="" disabled hidden>Choose a category</option>
+          <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria | uppercase }}</option>
+        </select>
+      </div>
+      <div class="col-4 col-sm-3 col-xl-2">
+        <button [disabled]="loading || categoriaSel === '' || categorias.length === 0" (click)="obtenerInfoCategoria()" type="button" class="btn btn-block btn-primary">
+          Search
+        </button>
+      </div>
+    </div>
+    <div *ngIf="!loading && categoriaSel !== '' && imagen" class="card mt-3 shadow animated fadeInDown">
+      <div class="row no-gutters p-3">
+        <div class="col-lg-6">
+          <div class="card-body p-0 pb-3 pr-lg-3 pb-lg-0 h-100 d-flex justify-content-center align-items-center">
+            <p class="card-text text-center">{{ infoCategoria }}</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img [src]="imagen" class="card-img" />
+        </div>
+      </div>
+    </div>
+    <p *ngIf="!loading && !result" class="pt-3 text-danger text-center animated fadeInDown">
+      Search without results, try another category
+    </p>
+  </div>
+</div>

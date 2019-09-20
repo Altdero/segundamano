@@ -1,0 +1,88 @@
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center animated fadeIn bg-dark">
+  <div class="login-container px-0 px-sm-3 card text-center shadow">
+    <div class="card-body">
+      <img src="../../assets/smmx-logo.png" class="sm-logo mb-2" />
+      <h5 class="card-title mb-4">Type your credentials</h5>
+      <form [formGroup]="forma" (ngSubmit)="acceder()">
+        <div class="form-group mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-dark">
+                <i class="material-icons text-white">perm_identity</i>
+              </div>
+            </div>
+            <input
+              [ngClass]="{ 'is-invalid': forma.controls.usuario.invalid && forma.controls.usuario.dirty }"
+              type="text"
+              class="form-control"
+              id="usuario"
+              placeholder="User"
+              formControlName="usuario"
+              required
+              aria-describedby="usuarioHelper"
+            />
+            <div *ngIf="forma.controls.usuario.errors?.required && forma.controls.usuario.dirty" class="invalid-tooltip text-left fadeIn animated">
+              Field is required
+            </div>
+          </div>
+          <small id="usuarioHelper" class="form-text text-muted text-left"> Tip: "user" </small>
+        </div>
+        <div class="form-group mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-dark">
+                <i class="material-icons text-white">vpn_key</i>
+              </div>
+            </div>
+            <input
+              [ngClass]="{ 'is-invalid': forma.controls.contrasena.invalid && forma.controls.contrasena.dirty }"
+              [type]="hide ? 'password' : 'text'"
+              class="form-control"
+              id="contrasena"
+              placeholder="Password"
+              formControlName="contrasena"
+              required
+              aria-describedby="contrasenaHelper"
+            />
+            <div *ngIf="forma.controls.contrasena.errors?.required && forma.controls.contrasena.dirty" class="invalid-tooltip text-left fadeIn animated">
+              Field is required
+            </div>
+            <div (click)="hide = !hide" class="input-group-append cursor-pointer">
+              <div class="input-group-text bg-dark">
+                <i class="material-icons text-white" [title]="hide ? 'Mostrar contraseña' : 'Ocultar contraseña'">{{ hide ? 'visibility_off' : 'visibility' }}</i>
+              </div>
+            </div>
+          </div>
+          <small id="contrasenaHelper" class="form-text text-muted text-left"> Tip: "123456" </small>
+        </div>
+        <div class="form-group mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-dark">
+                <i class="material-icons text-white">fingerprint</i>
+              </div>
+            </div>
+            <input
+              [ngClass]="{ 'is-invalid': forma.controls.apikey.invalid && forma.controls.apikey.dirty }"
+              type="text"
+              class="form-control"
+              id="apikey"
+              placeholder="Giphy API Key"
+              formControlName="apikey"
+              aria-describedby="apikeyHelper"
+            />
+          </div>
+          <small id="apikeyHelper" class="form-text text-muted text-left"> Tip: Use your own API Key or leave it </small>
+        </div>
+        <p *ngIf="error" class="text-danger animated fadeInDown">
+          {{ mensajeError }}
+        </p>
+        <div class="d-flex justify-content-center">
+          <button [disabled]="forma.invalid" type="submit" class="btn btn-block btn-success">Access</button>
+          &nbsp;&nbsp;&nbsp;
+          <button (click)="forma.reset()" type="button" class="btn btn-block btn-danger mt-0">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

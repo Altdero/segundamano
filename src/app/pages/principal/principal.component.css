@@ -1,0 +1,25 @@
+.main-container {
+  width: 100vw;
+}
+.chuck-logo {
+  max-width: 80%;
+}
+
+@media (min-width: 576px) {
+  .main-container {
+    width: 70vw;
+  }
+  .chuck-logo {
+    max-width: 60%;
+  }
+}
+@media (min-width: 768px) {
+  .main-container {
+    width: 55vw;
+  }
+}
+@media (min-width: 1400px) {
+  .main-container {
+    width: 45vw;
+  }
+}
